@@ -1,9 +1,9 @@
 ---
 title: "Activity 2"
-author: "Name"
+author: "Sam_Inturi"
 output: github_document
 ---
-
+my file 
 In the R code chunk below, I am setting a global option for this `.Rmd` report.
 For the time being you can, "pay not attention to the code between lines 10 and 12."
 
@@ -114,13 +114,13 @@ For this boxplot, we want to double-encode the variable `species` to not only th
 In the code chunk below, add the missing code (i.e., replacing the `___`) to have our comparative boxplots also include some coloring.
 
 ```{r boxplot-colors}
-ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species, ___ = ___)) +
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species, color = sex)) +
   geom_boxplot()
 ```
 
 Now, comment on what you notice from these boxplots.
 
-**Response**:
+**Response**: I think the Gentoo penguins flipper length is the largest of all the other penguins. 
 
 
 Another way to visualize distributions are with points.
@@ -129,15 +129,15 @@ We can create something similar with jitterplots using `geom_jitter`.
 In the code chunk below, complete it so that it produces a jitterplot.
 
 ```{r jitterplot}
-ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species, ___ = ___)) +
-  ___()
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species, color = sex)) +
+  geom_jitter()
 ```
 
 Comment on the strengths of the boxplot compared to the jitterplot and vice versa.
 That is, what can you easily determine by looking at the boxplot?
 What about the jitterplot?
 
-**Response**:
+**Response**: 
 
 
 Knit, then stage everything listed in your **Git** pane, commit (with a meaningful commit message), and push  to your GitHub repo.
@@ -156,7 +156,9 @@ Try doing the following in the code chunk below with my *hint*:
 - *Add* another geometry layer for the jitterplot.
 
 ```{r box-jitter-combined}
-
+ggplot(data = penguins, mapping = aes(x = flipper_length_mm, y = species, color = sex)) +
+  geom_boxplot()+
+  geom_jitter()
 ```
 
 Play around with doing the jitterplot laid over the boxplot and the boxplot laid over the jitterplot.
